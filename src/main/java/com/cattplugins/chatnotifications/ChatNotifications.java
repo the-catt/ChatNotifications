@@ -28,7 +28,7 @@ public final class ChatNotifications extends JavaPlugin implements Listener {
             if (sender instanceof Player){
                 Player player = (Player) sender;
                 PermissionAttachment pa = player.addAttachment(this);
-                pa.setPermission("chatnotifs.block", true);
+                pa.setPermission("chatnotifs.enable", false);
                 player.sendMessage(ChatColor.GOLD + "Chat Notifications disabled.");
             }
         }
@@ -37,7 +37,7 @@ public final class ChatNotifications extends JavaPlugin implements Listener {
             if (sender instanceof Player){
                 Player player = (Player) sender;
                 PermissionAttachment pa = player.addAttachment(this);
-                pa.setPermission("chatnotifs.block", false);
+                pa.setPermission("chatnotifs.enable", true);
                 player.sendMessage(ChatColor.GOLD + "Chat Notifications enabled.");
             }
         }
@@ -50,7 +50,7 @@ public final class ChatNotifications extends JavaPlugin implements Listener {
     }
     public void playSound(){
     for(Player oPlayer : this.getServer().getOnlinePlayers()){
-        if (!oPlayer.hasPermission("chatnotifs.block"))
+        if (oPlayer.hasPermission("chatnotifs.enable"))
         {
             oPlayer.playSound(oPlayer.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.0F, 1.0F);
         }
