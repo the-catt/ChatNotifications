@@ -1,0 +1,14 @@
+name: ChatNotifications
+version: '${project.version}'
+main: com.cattplugins.chatnotifications.ChatNotifications
+api-version: 1.19
+authors: [ thecatt ]
+description: This plugin lets players or server owners turn chat ping sounds on and off.
+website: https://twitter.com/Allenguy25
+commands:
+  cndisable:
+    description: This command disables Chat Notifications for yourself.
+    usage: /<command>
+  cnenable:
+    description: This command enables Chat Notifications for yourself.
+    usage: /<command>
